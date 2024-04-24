@@ -11,6 +11,9 @@ import CardTitle from "../../node_modules/@aziontech/azion-web-kit/src/fragments
 import Overline from "../../node_modules/@aziontech/azion-web-kit/src/fragments/text/overline.vue";
 import LinkButton from "../../node_modules/@aziontech/azion-web-kit/src/templates/button/link.vue";
 
+import Lottie from '@components/Lottie/index.vue';
+import ConfeteAnimation from "public/assets/animations/Confete.json"
+
 const dataCollection = await getCollection("braziljs");
 const lang = 'pt-br';
 const { render } = dataCollection[0];
@@ -48,6 +51,11 @@ const menuData = {
         bottomButtonsMobile,
     }}
 >
+
+    <div class="animation-confete absolute w-full h-full z-20 overflow-hidden t-[-100px]">
+        <Lottie animationData={ConfeteAnimation} client:load />
+    </div>
+
     <HeroBlockBase
         isCentralized={true}
         overline="PRIMEIRA FASE"
