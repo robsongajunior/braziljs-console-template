@@ -1,11 +1,6 @@
 ---
 import Favicon from '@components/html/meta-tags/favicon.astro';
 import Preloads from '@components/html/meta-tags/preloads.astro';
-// TRD3
-import Clarity from '@components/trd3/clarity/index.astro';
-import GoogleAnalytics from '@components/trd3/google-tag-manager/analytics.astro';
-import GoogleTagManager from '@/components/trd3/google-tag-manager/tagmanager-script.astro';
-// END TRD3
 import { SITE_URL } from '@/consts';
 
 interface PageLangs {
@@ -32,17 +27,16 @@ const defaultPage = pageLangs?.find(item => item.langPrefix === 'en');
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="generator" content={Astro.generator} />
 
-<title>{`${title} | Azion + Turso`}</title>
-<meta name="title" content={`${title} | Azion + Turso`} />
+<title>{`${title} | Azion + BrazilJS`}</title>
+<meta name="title" content={`${title} | Azion + BrazilJS`} />
 <meta name="description" content={description} />
 <meta name="keywords" content={meta_tags} />
 <meta property="og:url" content={Astro.url} />
-<meta property="og:title" content={`${title} | Azion + Turso`} />
+<meta property="og:title" content={`${title} | Azion + BrazilJS`} />
 <meta property="og:description" content={description} />
-<meta property="og:site_name" content="Primeagen in Brazil | Azion + Turso" />
+<meta property="og:site_name" content="Azion Technologies Console Template | Azion + BrazilJS" />
 <meta property="og:locale" content={lang} />
 <meta property="og:image:type" content="image/png" />
-<link rel="sitemap" href="/sitemap-index.xml" />
 
 <Favicon />
 <Preloads />
@@ -60,7 +54,3 @@ const defaultPage = pageLangs?.find(item => item.langPrefix === 'en');
     <link rel="alternate" href={`${SITE_URL}${defaultPage.slug}`} hreflang="x-default" />
   ) : null
 }
-
-<Clarity />
-<GoogleAnalytics />
-<GoogleTagManager />
